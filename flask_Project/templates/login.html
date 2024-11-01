@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <script>
+        function togglePassword() {
+            const passwordField = document.getElementById("password");
+            if (passwordField.type === "password") {
+                passwordField.type = "text";
+                document.getElementById("toggle").innerText = "Ocultar";
+            } else {
+                passwordField.type = "password";
+                document.getElementById("toggle").innerText = "Mostrar";
+            }
+        }
+    </script>
+</head>
+<body>
+    <form action="/authenticate" method="POST">
+        <label for="user_id">ID de Usuario:</label>
+        <input type="text" id="user_id" name="user_id" required><br><br>
+
+        <label for="password">Contraseña:</label>
+        <input type="password" id="password" name="password" required>
+        <button type="button" id="toggle" onclick="togglePassword()">Mostrar</button><br><br>
+
+        <button type="submit">Acceder</button>
+    </form>
+</body>
+</html>
